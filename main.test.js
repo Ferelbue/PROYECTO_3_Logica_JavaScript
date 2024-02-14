@@ -26,6 +26,26 @@ describe("Function fn - Input Parameter Test Cases", () => {
       expect(result).toBe(139);
    });
 
+
+
+   
+
+
+   test("Case: fn(11, 10, 9) - Expected Result: 139", () => {
+      const result = fn(2, 0, 4);
+      expect(result).toBe(30);
+   });
+   test("Case: fn(11, 10, 9) - Expected Result: 139", () => {
+      const result = fn(4, 0, 2);
+      expect(result).toBe(28);
+   });
+
+
+
+
+
+
+
    test("Throw error on negative input value: fn(-1, 3, 1)", () => {
       expect(() => fn(-1, 3, 1)).toThrow();
    });

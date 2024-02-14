@@ -63,42 +63,49 @@ export const fn = (a, b, c) => {
 
    //CASO EMPANADILLAS A/C SIN HABER B
    while ((vegetariana > 0) && (pollo > 0) && (numeroPagar != 0)) {
-      console.log("Holaaaa")
+      console.log("Ho")
 
       if (vegetariana > pollo) {
          if (pollo >= 3) {
             if ((pollo * 2) % 3 === 0) {
-               resultado += ((pollo * 2) / 3) * 12;
-               resultado += ((vegetariana - pollo) / 3) * 14;
+               //ESTA PARTE ESTA TESTEADA OK
+               resultado += ((pollo * 2) / 3) * 14;
+               resultado += ((vegetariana - pollo) / 3) * 16;
                vegetariana = 0;
                pollo = 0;
             } else {
+               //ESTA PARTE ESTA TESTEADA OK
+               resultado += Math.floor((((pollo * 2) - 1) / 3)) * 14;
                console.log(resultado)
-
-               resultado += Math.floor((((pollo * 2) - 1) / 3)) * 12;
-               console.log(resultado)
-               resultado += Math.ceil((vegetariana - pollo) / 3) * 14;
+               resultado += Math.ceil((vegetariana - pollo) / 3) * 16;
                vegetariana = 0;
                pollo = 0;
             }
          }
          else {
-            resultado += Math.floor((((pollo * 2) - 1) / 3)) * 12;
+            //ESTA PARTE ESTA TESTEADA OK
+            resultado += Math.floor((((pollo * 2) - 1) / 3)) * 14;
             console.log(resultado)
-            resultado += Math.ceil((vegetariana - pollo) / 3) * 14;
+            resultado += Math.ceil((vegetariana - pollo) / 3) * 16;
             vegetariana = 0;
             pollo = 0;
          }
       } else {
          if (vegetariana >= 3) {
             if ((pollo * 2) % 3 === 0) {
-               resultado += ((pollo * 2) / 3) * 14;
-               resultado += ((vegetariana - pollo) / 3) * 12;
+
+
+               console.log("Holaaaa?????")
+               resultado += ((vegetariana * 2) / 3) * 14;
+               resultado += ((pollo - vegetariana) / 3) * 12;
                vegetariana = 0;
                pollo = 0;
+
+
             } else {
-               resultado += Math.floor((((pollo * 2) - 1) / 3)) * 14;
-               resultado += Math.ceil((vegetariana - pollo) / 3) * 12;
+               console.log("Holaaaa")
+               resultado += Math.floor((((pollo * 2)) / 3)) * 14;
+               resultado += Math.ceil((vegetariana - pollo) / 3) * 16;
                vegetariana = 0;
                pollo = 0;
             }
@@ -251,4 +258,4 @@ export const fn = (a, b, c) => {
    return resultado;
 }
 
-fn(0,4,2)
+fn(8, 0, 4)
