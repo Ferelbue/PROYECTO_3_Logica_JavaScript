@@ -27,21 +27,90 @@ describe("Function fn - Input Parameter Test Cases", () => {
    });
 
 
-
-   
-
-
-   test("Case: fn(11, 10, 9) - Expected Result: 139", () => {
+   test("Case: fn(2, 0, 4) - Expected Result: 30", () => {
       const result = fn(2, 0, 4);
       expect(result).toBe(30);
    });
-   test("Case: fn(11, 10, 9) - Expected Result: 139", () => {
+   test("Case: fn(3, 0, 6) - Expected Result: 44", () => {
+      const result = fn(3, 0, 6);
+      expect(result).toBe(44);
+   });
+   test("Case: fn(0, 8, 4) - Expected Result: 60", () => {
+      const result = fn(4, 0, 8);
+      expect(result).toBe(60);
+   });
+   test("Case: fn(4, 0, 2) - Expected Result: 28", () => {
       const result = fn(4, 0, 2);
       expect(result).toBe(28);
+   });
+   test("Case: fn(6, 0, 3) - Expected Result: 40", () => {
+      const result = fn(6, 0, 3);
+      expect(result).toBe(40);
+   });
+   test("Case: fn(8, 0, 4) - Expected Result: 54", () => {
+      const result = fn(8, 0, 4);
+      expect(result).toBe(54);
    });
 
 
 
+
+
+
+
+   test("Case: fn(0, 4, 2) - Expected Result: 30", () => {
+      const result = fn(0, 4, 2);
+      expect(result).toBe(30);
+   });
+   test("Case: fn(0, 6, 3) - Expected Result: 44", () => {
+      const result = fn(0, 6, 3);
+      expect(result).toBe(44);
+   });
+   test("Case: fn(0, 8, 4) - Expected Result: 59", () => {
+      const result = fn(0, 8, 4);
+      expect(result).toBe(59);
+   });
+   test("Case: fn(0, 2, 4) - Expected Result: 31", () => {
+      const result = fn(0, 2, 4);
+      expect(result).toBe(31);
+   });
+   test("Case: fn(0, 3, 6) - Expected Result: 46", () => {
+      const result = fn(0, 3, 6);
+      expect(result).toBe(46);
+   });
+   test("Case: fn(0, 4, 8) - Expected Result: 62", () => {
+      const result = fn(0, 4, 8);
+      expect(result).toBe(62);
+   });
+
+
+
+
+
+   test("Case: fn(2, 4, 0) - Expected Result: 27", () => {
+      const result = fn(2, 4, 0);
+      expect(result).toBe(27);
+   });
+   test("Case: fn(3, 6, 0) - Expected Result: 40", () => {
+      const result = fn(3, 6, 0);
+      expect(result).toBe(40);
+   });
+   test("Case: fn(4, 8, 0) - Expected Result: 54", () => {
+      const result = fn(4, 8, 0);
+      expect(result).toBe(54);
+   });
+   test("Case: fn(4, 2, 0) - Expected Result: 27", () => {
+      const result = fn(4, 2, 0);
+      expect(result).toBe(26);
+   });
+   test("Case: fn(6, 3, 0) - Expected Result: 40", () => {
+      const result = fn(6, 3, 0);
+      expect(result).toBe(38);
+   });
+   test("Case: fn(8, 4, 0) - Expected Result: 54", () => {
+      const result = fn(8, 4, 0);
+      expect(result).toBe(51);
+   });
 
 
 
