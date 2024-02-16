@@ -27,6 +27,9 @@ describe("Function fn - Input Parameter Test Cases", () => {
    });
 
 
+
+/////COMBINACIONES AÑADIDAS//////
+
    test("Case: fn(2, 0, 4) - Expected Result: 30", () => {
       const result = fn(2, 0, 4);
       expect(result).toBe(30);
@@ -51,13 +54,6 @@ describe("Function fn - Input Parameter Test Cases", () => {
       const result = fn(8, 0, 4);
       expect(result).toBe(54);
    });
-
-
-
-
-
-
-
    test("Case: fn(0, 4, 2) - Expected Result: 30", () => {
       const result = fn(0, 4, 2);
       expect(result).toBe(30);
@@ -82,11 +78,6 @@ describe("Function fn - Input Parameter Test Cases", () => {
       const result = fn(0, 4, 8);
       expect(result).toBe(62);
    });
-
-
-
-
-
    test("Case: fn(2, 4, 0) - Expected Result: 27", () => {
       const result = fn(2, 4, 0);
       expect(result).toBe(27);
@@ -99,22 +90,32 @@ describe("Function fn - Input Parameter Test Cases", () => {
       const result = fn(4, 8, 0);
       expect(result).toBe(54);
    });
-   test("Case: fn(4, 2, 0) - Expected Result: 27", () => {
+   test("Case: fn(4, 2, 0) - Expected Result: 26", () => {
       const result = fn(4, 2, 0);
       expect(result).toBe(26);
    });
-   test("Case: fn(6, 3, 0) - Expected Result: 40", () => {
+   test("Case: fn(6, 3, 0) - Expected Result: 38", () => {
       const result = fn(6, 3, 0);
       expect(result).toBe(38);
    });
-   test("Case: fn(8, 4, 0) - Expected Result: 54", () => {
+   test("Case: fn(8, 4, 0) - Expected Result: 51", () => {
       const result = fn(8, 4, 0);
       expect(result).toBe(51);
    });
+   test("Case: fn(7, 4, 1) - Expected Result: 52", () => {
+      const result = fn(7, 4, 1);
+      expect(result).toBe(52);
+   });
+   test("Case: fn(12, 9, 3) - Expected Result: 106", () => {
+      const result = fn(12, 9, 3);
+      expect(result).toBe(106);
+   });
+   test("Case: fn(12, 9, 3) - Expected Result: 106", () => {
+      const result = fn(9, 18, 3);
+      expect(result).toBe(136);
+   });
 
-
-
-
+   
    test("Throw error on negative input value: fn(-1, 3, 1)", () => {
       expect(() => fn(-1, 3, 1)).toThrow();
    });

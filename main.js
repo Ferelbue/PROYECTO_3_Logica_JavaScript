@@ -27,8 +27,9 @@ export const fn = (a, b, c) => {
    numeroPagar = (vegetariana + carne + pollo) / 3;
 
 
+/////// SOLUCIONES DEL PRIMER PLANTEAMIENTO ////////
 
-   //CASO EMPANADILLAS A/C HABIENDO B (2,1,6)
+   //CASO EMPANADILLAS A/C HABIENDO B
    while ((vegetariana > 0) && (pollo > 0) && (carne > 0) && (numeroPagar != 0)) {
 
       resultado += 14;
@@ -36,11 +37,11 @@ export const fn = (a, b, c) => {
       vegetariana = vegetariana - 1
       pollo = pollo - 1
       carne = carne - 1
-      console.log(resultado)
+
       numeroPagar--;
    }
 
-   //CASO EMPANADILLAS B/C HABIENDO A (NO ENTRA NUNCA PERO LO DEJO PARA QUE SE VEAN TODAS LAS COMBINACIONES)
+   //CASO EMPANADILLAS B/C HABIENDO A (NO ENTRA NUNCA PERO LO DEJO PARA QUE SE VEAN TODAS LAS COMBINACIONES INICIALES)
    while ((vegetariana > 0) && (carne > 0) && (pollo > 0) && (numeroPagar != 0)) {
       resultado += 16;
 
@@ -49,10 +50,10 @@ export const fn = (a, b, c) => {
       carne = carne - 1
 
       numeroPagar--;
-      
+
    }
 
-   //CASO EMPANADILLAS A/B HABIENDO C (NO ENTRA NUNCA PERO LO DEJO PARA QUE SE VEAN TODAS LAS COMBINACIONES)
+   //CASO EMPANADILLAS A/B HABIENDO C (NO ENTRA NUNCA PERO LO DEJO PARA QUE SE VEAN TODAS LAS COMBINACIONES INICIALES)
    while ((pollo > 0) && (carne > 0) && (vegetariana > 0) && (numeroPagar != 0)) {
       resultado += 13;
 
@@ -63,55 +64,55 @@ export const fn = (a, b, c) => {
       numeroPagar--;
    }
 
+
+/////// SOLUCIONES DEL SEGUNDO PLANTEAMIENTO ////////
+
    //CASO EMPANADILLAS A/C SIN HABER B
    while ((vegetariana > 0) && (pollo > 0) && (numeroPagar != 0)) {
 
       if (vegetariana > pollo) {
          if (pollo >= 3) {
             if ((pollo * 2) % 3 === 0) {
-               //ESTA PARTE ESTA TESTEADA OK
                resultado += ((pollo * 2) / 3) * 14;
                resultado += ((vegetariana - pollo) / 3) * 16;
+
                vegetariana = 0;
                pollo = 0;
+
             } else {
-               //ESTA PARTE ESTA TESTEADA OK
                resultado += Math.floor((((pollo * 2) - 1) / 3)) * 14;
-               console.log(resultado)
                resultado += Math.ceil((vegetariana - pollo) / 3) * 16;
+
                vegetariana = 0;
                pollo = 0;
             }
-         }
-         else {
-            //ESTA PARTE ESTA TESTEADA OK
+         } else {
             resultado += Math.floor((((pollo * 2) - 1) / 3)) * 14;
-            console.log(resultado)
             resultado += Math.ceil((vegetariana - pollo) / 3) * 16;
+
             vegetariana = 0;
             pollo = 0;
          }
       } else {
          if (vegetariana >= 3) {
             if ((pollo * 2) % 3 === 0) {
-               //ESTA PARTE ESTA TESTEADA OK
                resultado += ((vegetariana * 2) / 3) * 14;
                resultado += ((pollo - vegetariana) / 3) * 12;
+
                vegetariana = 0;
                pollo = 0;
 
-               //ESTA PARTE ESTA TESTEADA OK
             } else {
-               console.log("Holaaaa")
                resultado += Math.floor((((pollo * 2)) / 3)) * 14;
                resultado += Math.ceil((vegetariana - pollo) / 3) * 16;
+
                vegetariana = 0;
                pollo = 0;
             }
          } else {
-            //ESTA PARTE ESTA TESTEADA OK
             resultado += Math.floor((((vegetariana * 2)) / 3)) * 14;
             resultado += Math.ceil((pollo - vegetariana) / 3) * 14;
+
             vegetariana = 0;
             pollo = 0;
          }
@@ -124,47 +125,46 @@ export const fn = (a, b, c) => {
       if (vegetariana > carne) {
          if (carne >= 3) {
             if ((carne * 2) % 3 === 0) {
-
                resultado += ((carne * 2) / 3) * 15;
                resultado += ((vegetariana - carne) / 3) * 16;
+
                vegetariana = 0;
                carne = 0;
             } else {
-
                resultado += Math.floor((((carne * 2) - 1) / 3)) * 15;
-               console.log(resultado)
                resultado += Math.ceil((vegetariana - carne) / 3) * 16;
+
                vegetariana = 0;
                carne = 0;
             }
          }
          else {
-
             resultado += Math.floor((((carne * 2) - 1) / 3)) * 15;
-            console.log(resultado)
             resultado += Math.ceil((vegetariana - carne) / 3) * 16;
+
             vegetariana = 0;
             carne = 0;
          }
       } else {
          if (vegetariana >= 3) {
             if ((carne * 2) % 3 === 0) {
-
                resultado += ((vegetariana * 2) / 3) * 15;
                resultado += ((carne - vegetariana) / 3) * 14;
+
                vegetariana = 0;
                carne = 0;
 
             } else {
-               console.log("Holaaaa")
                resultado += Math.floor((((carne * 2)) / 3)) * 15;
                resultado += Math.ceil((vegetariana - carne) / 3) * 16;
+
                vegetariana = 0;
                carne = 0;
             }
          } else {
             resultado += Math.floor((((vegetariana * 2)) / 3)) * 15;
             resultado += Math.ceil((carne - vegetariana) / 3) * 15;
+
             vegetariana = 0;
             carne = 0;
          }
@@ -175,26 +175,25 @@ export const fn = (a, b, c) => {
    //CASO EMPANADILLAS A/B SIN HABER C
    while ((carne > 0) && (pollo > 0) && (numeroPagar != 0)) {
 
-
       if (carne > pollo) {
          if (pollo >= 3) {
             if ((pollo * 2) % 3 === 0) {
                resultado += ((pollo * 2) / 3) * 13;
                resultado += ((carne - pollo) / 3) * 14;
+
                carne = 0;
                pollo = 0;
             } else {
                resultado += Math.floor((((pollo * 2) - 1) / 3)) * 13;
-               console.log(resultado)
                resultado += Math.ceil((carne - pollo) / 3) * 14;
+
                carne = 0;
                pollo = 0;
             }
-         }
-         else {
+         } else {
             resultado += Math.floor((((pollo * 2) - 1) / 3)) * 13;
-            console.log(resultado)
             resultado += Math.ceil((carne - pollo) / 3) * 14;
+
             carne = 0;
             pollo = 0;
          }
@@ -203,24 +202,30 @@ export const fn = (a, b, c) => {
             if ((pollo * 2) % 3 === 0) {
                resultado += ((carne * 2) / 3) * 13;
                resultado += ((pollo - carne) / 3) * 12;
+
                carne = 0;
                pollo = 0;
 
             } else {
                resultado += Math.floor((((pollo * 2)) / 3)) * 13;
                resultado += Math.ceil((carne - pollo) / 3) * 14;
+
                carne = 0;
                pollo = 0;
             }
          } else {
             resultado += Math.floor((((carne * 2)) / 3)) * 13;
             resultado += Math.ceil((pollo - carne) / 3) * 13;
+
             pollo = 0;
             carne = 0;
          }
       }
 
    }
+
+
+/////// SOLUCIONES DEL PRIMER PLANTEAMIENTO ////////
 
    // CASO EMPANADILLAS C
    while ((vegetariana > 0) && (numeroPagar != 0)) {
@@ -254,9 +259,5 @@ export const fn = (a, b, c) => {
 
       numeroPagar--;
    }
-
-   console.log(resultado)
    return resultado;
 }
-
-fn(11, 10, 9)
