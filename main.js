@@ -17,7 +17,7 @@ export const fn = (a, b, c) => {
       throwError;
    }
 
-   // TERCERA CONDICION. Nº EMPANADAS NUMEROS POSITIVOS
+   // TERCERA CONDICION. EMPANADAS NUMEROS POSITIVOS
    if ((vegetariana < 0) || (carne < 0) || (pollo < 0)) {
 
       throwError;
@@ -259,5 +259,6 @@ export const fn = (a, b, c) => {
 
       numeroPagar--;
    }
+   
    return resultado;
 }

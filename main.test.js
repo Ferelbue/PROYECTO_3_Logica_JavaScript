@@ -110,7 +110,7 @@ describe("Function fn - Input Parameter Test Cases", () => {
       const result = fn(12, 9, 3);
       expect(result).toBe(106);
    });
-   test("Case: fn(12, 9, 3) - Expected Result: 106", () => {
+   test("Case: fn(9, 18, 3) - Expected Result: 136", () => {
       const result = fn(9, 18, 3);
       expect(result).toBe(136);
    });
